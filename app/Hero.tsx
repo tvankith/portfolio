@@ -37,7 +37,10 @@ export const Hero = () => {
             onFinish={() => {
               toggleVisibilty(3);
             }} />
-          <button className={`bg-primary text-white mt-[22px] py-[12px] px-[20px] ${playfair.className} text-[20px] w-fit ${visitibilty[3] ? 'visible' : 'invisible'}`}>CONTACT ME</button>
+          <a 
+            className={`bg-primary text-white mt-[22px] py-[12px] px-[20px] ${playfair.className} text-[20px] w-fit cursor-pointer ${visitibilty[3] ? 'visible' : 'invisible'}`}
+            href={"mailto:tvankith@gmail.com"}
+            >CONTACT ME</a>
         </div>
         <div className='absolute box-border bottom-0 w-0 h-0 border-white border border-r-[100vw] border-t-[134px] border-t-transparent'></div>
       </div>
