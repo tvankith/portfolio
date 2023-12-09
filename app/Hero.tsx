@@ -11,19 +11,19 @@ export const Hero = () => {
   };
   return (
     <main>
-      <div className='relative bg-[rgb(237,235,228)] h-[100vh] box-border border-transparent flex justify-center'>
-        <div className='w-[1110px] text-black flex flex-col justify-center'>
+      <div className='relative bg-[rgb(237,235,228)] h-[100vh] flex flex-row justify-center'>
+        <div className='lg:w-[1110px] w-full px-8 text-black flex flex-col pt-[30vh]'>
           <Typewriter
             autoStart={visitibilty[0]}
-            className={`leading-[100px] ${playfair.className} font-black text-[112px] h-[112px]`}
-            text={"Hi, I'm Ankith T V"}
+            className={`lg:leading-[100px] ${playfair.className} font-black lg:text-[112px] text-[50px] leading-tight`}
+            text={"Hi, I'm Ankith"}
             onFinish={() => {
               toggleVisibilty(1);
             }}
             speed={100} />
           <Typewriter
             autoStart={visitibilty[1]}
-            className={`${ptSansNarrow.className} leading-[40px] text-secondary font-black text-[30px] h-[40px] w-full`}
+            className={`${ptSansNarrow.className} lg:leading-[40px] text-secondary font-black text-[20px] leading-normal md:text-[30px]`}
             text={"A skilled web developer creating great online experiences"}
             onFinish={() => {
               toggleVisibilty(2);
@@ -31,7 +31,7 @@ export const Hero = () => {
             speed={30} />
           <Typewriter
             autoStart={visitibilty[2]}
-            className={`${ptSansNarrow.className} leading-[40px] text-secondary font-black text-[30px] h-[40px] w-full`}
+            className={`${ptSansNarrow.className} lg:leading-[40px] text-secondary font-black text-[20px] leading-normal md:text-[30px]`}
             text={"Let's build something amazing for the web!"}
             speed={30}
             onFinish={() => {
