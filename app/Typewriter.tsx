@@ -36,9 +36,11 @@ export const Typewriter = React.forwardRef(({ text, className, onFinish, autoSta
     return () => {
       clearInterval(interval as unknown as number);
     };
-  }, [charIndex, text, start]);
+  }, [charIndex, text, start, speed, onFinish]);
 
   return <h5 className={className}>
     {displayText}
   </h5>;
 });
+
+Typewriter.displayName = 'Typewriter';
