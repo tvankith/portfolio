@@ -26,8 +26,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.nav__link {
+  @apply grayscale
+}
+
 .nav__link--active {
-  @apply relative
+  @apply relative grayscale-0
 }
 
 .nav__link--active::after {

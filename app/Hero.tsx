@@ -1,17 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import { Typewriter } from './Typewriter';
-import { Playfair, PT_Sans_Narrow } from 'next/font/google';
 import { Container } from './Container';
+import { playfair, ptSansNarrow } from './fonts';
 
-export const playfair = Playfair({
-  subsets: ["latin"]
-})
-
-export const ptSansNarrow = PT_Sans_Narrow({
-  subsets: ["latin"],
-  weight: ["400", "700"]
-})
 
 export const Hero = () => {
   const [visitibilty, setVisitibilty] = useState<boolean[]>([true, false, false, false]);
