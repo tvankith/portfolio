@@ -61,10 +61,10 @@ const MobileNav = () => {
         <Container>
           <div className='mt-[30%]'>
             <div className='flex flex-col items-center gap-y-6 mt-8 text-[18px]'>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/" ? 'nav__link--active' : ''}`} href={"/"}>Home</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/skills" ? 'nav__link--active' : ''}`} href={"/skills"}>Skills</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/portfolio" ? 'nav__link--active' : ''}`} href={"/portfolio"}>Portfolio</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/contact" ? 'nav__link--active' : ''}`} href={"/contact"}>Contact</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/" ? 'nav__link--active' : ''}`} href={"/"}>Home</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/skills" ? 'nav__link--active' : ''}`} href={"/skills"}>Skills</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/portfolio" ? 'nav__link--active' : ''}`} href={"/portfolio"}>Portfolio</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/contact" ? 'nav__link--active' : ''}`} href={"/contact"}>Contact</Link>
             </div>
           </div>
         </Container>

@@ -34,6 +34,10 @@ body {
   @apply box-content min-w-full border-b-[5px] border-b-primary border-r-[rgb(237,235,228)] border-r-[5px] ;  
 }
 
+.nav__link {
+  @apply tracking-wider
+}
+
 /* Hamburger */
 .hamburger {
   @apply cursor-pointer relative
