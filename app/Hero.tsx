@@ -22,7 +22,7 @@ export const Hero = () => {
     <main>
       <div className='relative'>
         <Container>
-          <div className=' text-black flex flex-col pt-[30vh]'>
+          <div className=' text-black flex flex-col pt-[25vh]'>
             <Typewriter
               autoStart={visitibilty[0]}
               className={`lg:leading-[100px] ${playfair.className} font-black lg:text-[112px] text-[50px] leading-tight`}

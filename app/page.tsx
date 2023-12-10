@@ -1,14 +1,13 @@
 "use client"
 import React from 'react';
 import { Hero } from './Hero';
-import { Nav } from './components/Nav';
+import { Page } from './components/Page';
 
 export default function Home() {
 
   return (
-    <div className='bg-background h-screen overflow-x-hidden'>
-      <Nav />
+    <Page>
       <Hero />
-    </div>
+    </Page>
   )
 }
