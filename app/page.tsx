@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { Hero } from './Hero';
-import { Nav } from './Nav';
+import { Nav } from './components/Nav';
 
 export default function Home() {
 

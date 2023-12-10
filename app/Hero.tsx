@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from 'react';
-import { Typewriter } from './Typewriter';
-import { Container } from './Container';
+import { Typewriter } from './components/Typewriter';
+import { Container } from './components/Container';
 import { playfair, ptSansNarrow } from './fonts';
 
 
