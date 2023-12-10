@@ -3,29 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /*  */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /*  */
   }
 }
 
 body {
-  color: #fff;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /*  */
 }
 
+/* Nav */
 .nav__link {
   @apply grayscale
 }
@@ -40,7 +31,28 @@ body {
   position: absolute;
   bottom: -2px;
   left: 0px;
-  @apply box-content min-w-full border-b-[5px] border-b-primary;  
-  @apply md:border-r-[rgb(237,235,228)] md:border-r-[5px] 
+  @apply box-content min-w-full border-b-[5px] border-b-primary border-r-[rgb(237,235,228)] border-r-[5px] ;  
 }
 
+/* Hamburger */
+.hamburger {
+  @apply cursor-pointer relative
+}
+.hamburger .line {
+  display: block;
+  margin: 5px auto;
+  width: 40px;
+  height: 3px;
+  @apply bg-primary opacity-100 transition-all ease-in-out delay-300
+}
+.hamburger--active .line:nth-child(2) {
+  @apply opacity-0
+}
+
+.hamburger--active .line:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger--active .line:nth-child(3) {
+  @apply rotate-[-45deg] translate-y-[-15px];
+}

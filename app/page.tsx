@@ -6,7 +6,7 @@ import { Nav } from './Nav';
 export default function Home() {
 
   return (
-    <div className='bg-[rgb(237,235,228)] h-screen overflow-x-hidden'>
+    <div className='bg-background h-screen overflow-x-hidden'>
       <Nav />
       <Hero />
     </div>
