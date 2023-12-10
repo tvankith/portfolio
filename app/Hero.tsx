@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Typewriter } from './Typewriter';
 import { Container } from './Container';
 import { playfair, ptSansNarrow } from './fonts';
@@ -8,9 +8,16 @@ import { playfair, ptSansNarrow } from './fonts';
 export const Hero = () => {
   const [visitibilty, setVisitibilty] = useState<boolean[]>([true, false, false, false]);
 
-  const toggleVisibilty = (index: number) => {
+  const toggleVisibilty = useCallback((index: number) => {
     setVisitibilty(arr => arr.map(((v, i) => i === index ? true : v)));
-  };
+  },[])
+
+  useEffect(()=>{
+    sessionStorage.setItem("isHeroSectionLoaded", "true")
+  },[])
+
+  const [showAnimation] =  useState(sessionStorage.getItem("isHeroSectionLoaded") !== "true")
+
   return (
     <main>
       <div className='relative'>
@@ -23,7 +30,9 @@ export const Hero = () => {
               onFinish={() => {
                 toggleVisibilty(1);
               }}
-              speed={100} />
+              speed={100} 
+              animation={showAnimation}
+              />
             <Typewriter
               autoStart={visitibilty[1]}
               className={`${ptSansNarrow.className} lg:leading-[40px] text-secondary font-black text-[20px] leading-normal md:text-[30px]`}
@@ -31,17 +40,20 @@ export const Hero = () => {
               onFinish={() => {
                 toggleVisibilty(2);
               }}
-              speed={30} />
+              speed={30}
+              animation={showAnimation}
+              />
             <Typewriter
               autoStart={visitibilty[2]}
               className={`${ptSansNarrow.className} lg:leading-[40px] text-secondary font-black text-[20px] leading-normal md:text-[30px]`}
               text={"Let's build something amazing for the web!"}
               speed={30}
+              animation={showAnimation}
               onFinish={() => {
                 toggleVisibilty(3);
               }} />
             <a 
-              className={`bg-primary text-white mt-[22px] py-[12px] px-[20px] ${playfair.className} text-[20px] w-fit cursor-pointer ${visitibilty[3] ? 'visible' : 'invisible'}`}
+              className={`bg-primary text-white mt-[22px] py-[12px] px-[20px] ${playfair.className} text-[20px] w-fit cursor-pointer ${(visitibilty[3] || !showAnimation) ? 'visible' : 'invisible'}`}
               href={"mailto:tvankith@gmail.com"}
               >CONTACT ME</a>
           </div>
