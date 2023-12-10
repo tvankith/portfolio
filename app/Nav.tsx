@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { playfair, ptSansNarrow } from './fonts';
+import { ptSansNarrow } from './fonts';
 
 const HamburgerIcon = (props: { onChange: (arg0: boolean) => void; }) => {
   const [isActive, setIsActive] = useState(false)
