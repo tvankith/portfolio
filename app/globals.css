@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.nav__link--active {
+  @apply relative
+}
+
+.nav__link--active::after {
+  content: "";
+  height: 0px;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  @apply box-content min-w-full border-b-[5px] border-b-primary;  
+  @apply md:border-r-[rgb(237,235,228)] md:border-r-[5px] 
+}
+
