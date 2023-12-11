@@ -21,6 +21,7 @@ export const Typewriter = React.forwardRef(({ text, className, onFinish, autoSta
     let interval: NodeJS.Timer
     if (!start || !animation) {
       // 
+      console.log("here",animation)
     } else {
       interval = setInterval(() => {
         if (charIndex <= text.length - 1) {
