@@ -8,7 +8,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { ptSansNarrow } from '../fonts';
 
-const HamburgerIcon = (props: { onChange: (arg0: boolean) => void; }) => {
+const HamburgerIcon = (props: { onChange: (open: boolean) => void; }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
@@ -42,6 +42,7 @@ const SocialIcons = () => {
 const MobileNav = () => {
   const pathname = usePathname();
   const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const [overlayDisplay, setOverlayDisplay] = useState("none")
   useEffect(() => {
 
   }, [])
@@ -50,6 +51,14 @@ const MobileNav = () => {
       <div className='md:hidden fixed z-20'>
         <HamburgerIcon
           onChange={(v) => {
+            if(v) {
+              setOverlayDisplay("block")
+            } else {
+              setTimeout(()=>{
+                // wait for animation to finish
+                setOverlayDisplay("none")
+              },300)
+            }
             setIsMenuVisible(v)
           }}
         />
@@ -57,6 +66,7 @@ const MobileNav = () => {
       <div onAnimationEnd={() => {
 
       }}
+      style={{display: overlayDisplay}}
         className={`${isMenuVisible ? ' animate-fadein' : ' animate-fadeout'} fixed inset-0 h-screen w-screen z-10 bg-background transition-opacity delay-300`}>
         <Container>
           <div className='mt-[30%]'>
