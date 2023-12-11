@@ -6,7 +6,7 @@ export const Page = (props: { children: string | number | boolean | React.ReactE
   return (
     <div className='bg-background h-screen overflow-x-hidden'>
       <Nav />
-      <div className='pt-[80px]'>
+      <div className='pt-[80px] mr-[-8px]'>
         {props.children}
       </div>
     </div>
