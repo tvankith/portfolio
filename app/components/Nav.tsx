@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { playfair, ptSansNarrow } from './fonts';
+import { ptSansNarrow } from '../fonts';
 
-const HamburgerIcon = (props: { onChange: (arg0: boolean) => void; }) => {
+const HamburgerIcon = (props: { onChange: (open: boolean) => void; }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
@@ -42,29 +42,41 @@ const SocialIcons = () => {
 const MobileNav = () => {
   const pathname = usePathname();
   const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const [overlayDisplay, setOverlayDisplay] = useState("none")
   useEffect(() => {
 
   }, [])
   return (
     <div className='md:hidden mt-8'>
-      <div className='md:hidden fixed z-20'>
-        <HamburgerIcon
-          onChange={(v) => {
-            setIsMenuVisible(v)
-          }}
-        />
+      <div className='w-full bg-background h-[40px] md:hidden fixed z-20 flex flex-row justify-start'>
+        <div className=''>
+          <HamburgerIcon
+            onChange={(v) => {
+              if(v) {
+                setOverlayDisplay("block")
+              } else {
+                setTimeout(()=>{
+                  // wait for animation to finish
+                  setOverlayDisplay("none")
+                },300)
+              }
+              setIsMenuVisible(v)
+            }}
+          />
+        </div>
       </div>
       <div onAnimationEnd={() => {
 
       }}
+      style={{display: overlayDisplay}}
         className={`${isMenuVisible ? ' animate-fadein' : ' animate-fadeout'} fixed inset-0 h-screen w-screen z-10 bg-background transition-opacity delay-300`}>
         <Container>
           <div className='mt-[30%]'>
             <div className='flex flex-col items-center gap-y-6 mt-8 text-[18px]'>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/" ? 'nav__link--active' : ''}`} href={"/"}>Home</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/skills" ? 'nav__link--active' : ''}`} href={"/skills"}>Skills</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/portfolio" ? 'nav__link--active' : ''}`} href={"/portfolio"}>Portfolio</Link>
-              <Link className={`cursor-pointer ${ptSansNarrow.className} ${pathname === "/contact" ? 'nav__link--active' : ''}`} href={"/contact"}>Contact</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/" ? 'nav__link--active' : ''}`} href={"/"}>Home</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/skills" ? 'nav__link--active' : ''}`} href={"/skills"}>Skills</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/portfolio" ? 'nav__link--active' : ''}`} href={"/portfolio"}>Portfolio</Link>
+              <Link className={`cursor-pointer nav__link ${ptSansNarrow.className} ${pathname === "/contact" ? 'nav__link--active' : ''}`} href={"/contact"}>Contact</Link>
             </div>
           </div>
         </Container>
@@ -77,7 +89,7 @@ export const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={`w-full fixed z-10 `}>
+    <nav className={`w-full fixed z-10 bg-background pb-2`}>
       <Container>
         <MobileNav />
         <div className='hidden md:flex flex-row justify-between mt-8'>
