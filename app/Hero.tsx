@@ -54,7 +54,7 @@ export const Hero = () => {
               }} />
             <a 
               className={`bg-primary text-white mt-[22px] py-[12px] px-[20px] ${playfair.className} text-[20px] w-fit cursor-pointer ${(visitibilty[3] || !showAnimation) ? 'visible' : 'invisible'}`}
-              href={"mailto:tvankith@gmail.com"}
+              href='/contact'
               >CONTACT ME</a>
           </div>
         </Container>
