@@ -41,7 +41,7 @@ export default function Skills() {
                 <div className='flex flex-row flex-wrap gap-y-4 gap-x-4 mt-[25%]'>
                     {
                         allSkills.map((item) => {
-                            return <Skill label={item.label}/>
+                            return <Skill key={item.label} label={item.label}/>
                         })
                     }
                 </div>

@@ -33,7 +33,7 @@ const Card = (props: {
         </Link>
         <ul className={`ml-4 text-[16px] list-disc ${ptSansNarrow.className}`}>
           {
-            props.archievements.map((text: string) => <li>{text}</li>)
+            props.archievements.map((text: string) => <li key={text}>{text}</li>)
           }
         </ul>
       </div>
@@ -92,14 +92,14 @@ export default function Portfolio() {
       <Container>
         {
           experience.map((company) => (
-            <div className='flex flex-col w-full mb-3'>
+            <div key={company.companyName} className='flex flex-col w-full mb-3'>
               <div className='flex flex-row'>
                 <h1 className={`text-[18px] font-bold my-2 ${playfair.className}`}>{company.companyName}</h1>
                 <h1 className={`text-[18px] font-bold my-2 ${playfair.className} text-orange-600`}>{company.year}</h1>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
-                  company.projects.map((project) => <Card {...project} />)
+                  company.projects.map((project) => <Card key={project.name} {...project} />)
                 }
               </div>
             </div>
