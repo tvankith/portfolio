@@ -48,20 +48,22 @@ const MobileNav = () => {
   }, [])
   return (
     <div className='md:hidden mt-8'>
-      <div className='md:hidden fixed z-20'>
-        <HamburgerIcon
-          onChange={(v) => {
-            if(v) {
-              setOverlayDisplay("block")
-            } else {
-              setTimeout(()=>{
-                // wait for animation to finish
-                setOverlayDisplay("none")
-              },300)
-            }
-            setIsMenuVisible(v)
-          }}
-        />
+      <div className='w-full bg-background h-[40px] md:hidden fixed z-20 flex flex-row justify-start'>
+        <div className=''>
+          <HamburgerIcon
+            onChange={(v) => {
+              if(v) {
+                setOverlayDisplay("block")
+              } else {
+                setTimeout(()=>{
+                  // wait for animation to finish
+                  setOverlayDisplay("none")
+                },300)
+              }
+              setIsMenuVisible(v)
+            }}
+          />
+        </div>
       </div>
       <div onAnimationEnd={() => {
 
