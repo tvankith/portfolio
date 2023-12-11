@@ -77,7 +77,7 @@ export const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={`w-full fixed z-10 `}>
+    <nav className={`w-full fixed z-10 bg-background pb-2`}>
       <Container>
         <MobileNav />
         <div className='hidden md:flex flex-row justify-between mt-8'>
