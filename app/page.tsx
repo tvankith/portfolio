@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Link href={"https://github.com/tvankith/portfolio"}>
         <div className='fixed bottom-5 w-full flex flex-row gap-x-1 justify-center items-center underline'>
-          <FontAwesomeIcon className='text-black text-[14px] md:text-[20px]' icon={faGithub} />
+          <FontAwesomeIcon className='text-black h-[18px] md:text-[20px]' icon={faGithub} />
           <p className={`text-[18px]  ${ptSansNarrow.className}`}>Built with Next.js</p>
         </div>
       </Link>
