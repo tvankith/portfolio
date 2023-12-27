@@ -14,10 +14,12 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        primary: '#0699A6',
-        secondary: '#9E8C6C',
+        primary: '#161A30',
+        secondary: '#B6BBC4',
+        accent: '#F0ECE5',
         font: '#000',
-        background: 'rgb(237,235,228)'
+        background: 'rgb(237,235,228)',
+        card: '#31304D'
       },
       keyframes: {
         fadeout: {
