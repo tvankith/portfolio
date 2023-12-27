@@ -26,7 +26,7 @@ const allSkills = [
 ]
 const Skill = (props: { icon?: IconProp; label: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; }) => {
     return (
-        <div className={` border-2 border-primary px-4 py-2 w-fit text-black font-bold tracking-wide ${ptSansNarrow.className}`}>
+        <div className={` border-2 border-secondary px-4 py-2 w-fit text-secondary font-bold tracking-wide ${ptSansNarrow.className}`}>
             {props?.icon ? <FontAwesomeIcon className='text-black text-[20px] mx-2' icon={props?.icon} />: null}
             {props.label}
         </div>

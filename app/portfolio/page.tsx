@@ -15,7 +15,7 @@ const Card = (props: {
   thumbnail: string | StaticImport; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; archievements: string[];
 }) => {
   return (
-    <div className=' border-2 border-primary'>
+    <div className=' border-2 border-card bg-card rounded-md p-2'>
       <div className='relative w-full h-[250px] aspect-video bg-black flex flex-row justify-center'>
         <Image
           src={props.thumbnail}
@@ -26,10 +26,10 @@ const Card = (props: {
           unoptimized={true}
         />
       </div>
-      <div className='m-3'>
+      <div className='m-3 text-secondary '>
         <Link href={props.link} target='_blank' className='flex flex-row gap-x-1 items-center'>
-          <h1 className={`text-[18px] text-black font-bold tracking-wide underline ${playfair.className}`}>{props.name}</h1>
-          <FontAwesomeIcon className='text-black text-[15px]' icon={faArrowUpRightFromSquare} />
+          <h1 className={`text-[18px] font-bold tracking-wide underline ${playfair.className}`}>{props.name}</h1>
+          <FontAwesomeIcon className=' text-[15px]' icon={faArrowUpRightFromSquare} />
         </Link>
         <ul className={`ml-4 text-[16px] list-disc ${ptSansNarrow.className}`}>
           {
@@ -92,10 +92,10 @@ export default function Portfolio() {
       <Container>
         {
           experience.map((company) => (
-            <div key={company.companyName} className='flex flex-col w-full mb-3'>
-              <div className='flex flex-row'>
+            <div key={company.companyName} className='flex flex-col w-full mb-3 '>
+              <div className='flex flex-row text-secondary'>
                 <h1 className={`text-[18px] font-bold my-2 ${playfair.className}`}>{company.companyName}</h1>
-                <h1 className={`text-[18px] font-bold my-2 ${playfair.className} text-orange-600`}>{company.year}</h1>
+                <h1 className={`text-[18px] font-bold my-2 ${playfair.className}`}>{company.year}</h1>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {

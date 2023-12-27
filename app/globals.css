@@ -18,7 +18,7 @@ body {
 
 /* Nav */
 .nav__link {
-  @apply grayscale
+  @apply text-secondary
 }
 
 .nav__link--active {
@@ -31,7 +31,7 @@ body {
   position: absolute;
   bottom: -2px;
   left: 0px;
-  @apply box-content min-w-full border-b-[5px] border-b-primary border-r-[rgb(237,235,228)] border-r-[5px] ;  
+  @apply box-content min-w-full border-b-[5px] border-b-secondary border-r-primary border-r-[5px] ;  
 }
 
 .nav__link {
@@ -47,7 +47,7 @@ body {
   margin: 5px auto;
   width: 40px;
   height: 3px;
-  @apply bg-primary opacity-100 transition-all ease-in-out delay-300
+  @apply bg-secondary opacity-100 transition-all ease-in-out delay-300
 }
 .hamburger--active .line:nth-child(2) {
   @apply opacity-0
