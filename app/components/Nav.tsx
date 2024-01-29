@@ -30,10 +30,10 @@ const SocialIcons = () => {
   return (
     <div className='mt-[5px] flex flex-row gap-x-5 h-[20px]'>
       <a href='https://www.linkedin.com/in/tvankith/' target='_blank'>
-        <FontAwesomeIcon className='text-black text-[20px]' icon={faLinkedin} />
+        <FontAwesomeIcon className='text-secondary text-[20px]' icon={faLinkedin} />
       </a>
       <a href='https://github.com/tvankith' target='_blank'>
-        <FontAwesomeIcon className='text-black text-[20px]' icon={faGithub} />
+        <FontAwesomeIcon className='text-secondary text-[20px]' icon={faGithub} />
       </a>
     </div>
   )
@@ -48,7 +48,7 @@ const MobileNav = () => {
   }, [])
   return (
     <div className='md:hidden mt-8'>
-      <div className='w-full bg-background h-[40px] md:hidden fixed z-20 flex flex-row justify-start'>
+      <div className='w-full bg-primary h-[40px] md:hidden fixed z-20 flex flex-row justify-start'>
         <div className=''>
           <HamburgerIcon
             onChange={(v) => {
@@ -69,7 +69,7 @@ const MobileNav = () => {
 
       }}
       style={{display: overlayDisplay}}
-        className={`${isMenuVisible ? ' animate-fadein' : ' animate-fadeout'} fixed inset-0 h-screen w-screen z-10 bg-background transition-opacity delay-300`}>
+        className={`${isMenuVisible ? ' animate-fadein' : ' animate-fadeout'} fixed inset-0 h-screen w-screen z-10 bg-primary transition-opacity delay-300`}>
         <Container>
           <div className='mt-[30%]'>
             <div className='flex flex-col items-center gap-y-6 mt-8 text-[18px]'>
@@ -89,7 +89,7 @@ export const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={`w-full fixed z-10 bg-background pb-2`}>
+    <nav className={`w-full fixed z-10 bg-primary pb-2`}>
       <Container>
         <MobileNav />
         <div className='hidden md:flex flex-row justify-between mt-8'>
