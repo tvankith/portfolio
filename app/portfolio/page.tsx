@@ -1,8 +1,5 @@
 "use client"
 import React from 'react';
-import { Nav } from '../components/Nav';
-import { Page } from '../components/Page';
-import { Container } from '../components/Container';
 import { playfair, ptSansNarrow } from '../fonts';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
@@ -15,7 +12,7 @@ const Card = (props: {
   thumbnail: string | StaticImport; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; archievements: string[];
 }) => {
   return (
-    <div className=' border-2 border-card bg-card rounded-md p-2'>
+    <div className=' border border-1 rounded-md p-2'>
       <div className='relative w-full h-[250px] aspect-video bg-black flex flex-row justify-center'>
         <Image
           src={props.thumbnail}
@@ -88,8 +85,8 @@ export default function Portfolio() {
     },
   ]
   return (
-    <Page>
-      <Container>
+    <>
+      <>
         {
           experience.map((company) => (
             <div key={company.companyName} className='flex flex-col w-full mb-3 '>
@@ -105,7 +102,7 @@ export default function Portfolio() {
             </div>
           ))
         }
-      </Container>
-    </Page>
+      </>
+    </>
   )
 }
